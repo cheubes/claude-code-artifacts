@@ -87,14 +87,14 @@ Ne pas procéder à la modification tant que le Titre n'est pas confirmé ou fou
 
 ### 2c — Application des modifications
 
-Applique en une seule commande `exiftool` le Titre fourni **et** les champs obligatoires suivants (sauf instruction contraire explicite de l'utilisateur) :
+Construis une commande `exiftool` qui inclut toujours le Titre fourni, et **uniquement les autres champs non conformes** identifiés en 2a :
 
 ```
 exiftool -overwrite_original \
   -Title="<titre fourni>" \
-  -Creator="Christophe Heubès" \
-  -Copyright="CC BY-NC-SA 4.0" \
-  -WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" \
+  [-Creator="Christophe Heubès"] \
+  [-Copyright="CC BY-NC-SA 4.0"] \
+  [-WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"] \
   <fichier>
 ```
 
