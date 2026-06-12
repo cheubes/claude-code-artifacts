@@ -72,7 +72,7 @@ Si au moins un fichier présente des champs non conformes :
 
 ## Cas 2 — Modification (`edit`)
 
-Si la demande commence par `edit` ou contient une assignation `tag=valeur` :
+Si la demande commence par `edit` :
 
 ### 2a — Lecture de l'état actuel
 
