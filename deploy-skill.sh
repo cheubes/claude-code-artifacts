@@ -58,11 +58,7 @@ rm -f "$OUTPUT"
 
 (
   cd "$SKILL_DIR"
-  if [[ -d datas ]]; then
-    zip -r "$OUTPUT" SKILL.md datas/ >/dev/null
-  else
-    zip -j "$OUTPUT" SKILL.md >/dev/null
-  fi
+  zip -r "$OUTPUT" . >/dev/null
 )
 
 echo "Packaged → bin/${SKILL_NAME}.zip"
