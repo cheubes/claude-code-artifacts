@@ -2,7 +2,7 @@
 name: image-exif
 description: Vérifie ou modifie les données EXIF d'images. Déclencher sur toute demande liée aux métadonnées, propriétés ou informations EXIF d'un ou plusieurs fichiers images.
 disable-model-invocation: true
-argument-hint: "check <fichier(s)> | edit <fichier> <tag=valeur> [<tag=valeur> ...]"
+argument-hint: "check <fichier(s)> | edit <fichier>"
 allowed-tools: Bash(exiftool *)
 ---
 
