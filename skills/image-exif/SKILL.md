@@ -74,13 +74,13 @@ Si au moins un fichier présente des champs non conformes :
 
 Si la demande commence par `edit` ou contient une assignation `tag=valeur` :
 
-### 2a — Lecture du Titre existant
+### 2a — Lecture de l'état actuel
 
-Lance `exiftool -Title <fichier>` et note la valeur actuelle du champ Titre (peut être vide ou absent).
+Lance `exiftool -Title -Creator -Copyright -WebStatement <fichier>` et affiche les quatre champs sous forme de tableau (valeur actuelle + conformité selon les règles de 1b).
 
 ### 2b — Demande du Titre
 
-- Si un Titre existe déjà, affiche-le : `Titre actuel : "<valeur>"` puis demande si l'utilisateur souhaite le conserver ou le remplacer.
+- Si un Titre existe déjà, demande si l'utilisateur souhaite le conserver ou le remplacer.
 - Si le Titre est vide ou absent, demande directement le libellé souhaité.
 
 Ne pas procéder à la modification tant que le Titre n'est pas confirmé ou fourni.
