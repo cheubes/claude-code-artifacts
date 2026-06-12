@@ -54,7 +54,7 @@ if [[ ! -f "$SKILL_DIR/SKILL.md" ]]; then
 fi
 
 SKILL_NAME=$(basename "$SKILL_DIR")
-SKILL_ABS="$(pwd)/${SKILL_DIR}"
+SKILL_ABS="$(realpath "$SKILL_DIR")"
 
 # Produce a distributable archive (separate from the local deploy below)
 mkdir -p bin
