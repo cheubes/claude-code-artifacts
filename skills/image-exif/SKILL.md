@@ -24,6 +24,12 @@ Si la commande échoue, arrête-toi et informe l'utilisateur : "exiftool n'est p
 
 ---
 
+## Arguments manquants
+
+Si aucun fichier n'est mentionné après la commande (`check` ou `edit` seul), demande à l'utilisateur de préciser le ou les fichiers à traiter avant de continuer.
+
+---
+
 ## Cas 1 — Vérification (`check`)
 
 Si la demande commence par `check` ou ressemble à une demande de lecture/consultation :
