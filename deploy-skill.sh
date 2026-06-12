@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SKILL_DIR="${1:-}"
 DEPLOY_DIR="${HOME}/.claude/skills"
 
 usage() {
@@ -16,11 +15,21 @@ usage() {
   exit 1
 }
 
+SKILL_DIR=""
 USE_LINK=false
+
 for arg in "$@"; do
   case "$arg" in
     --link) USE_LINK=true ;;
     -*) echo "Error: unknown option '$arg'" >&2; usage ;;
+    *)
+      if [[ -z "$SKILL_DIR" ]]; then
+        SKILL_DIR="$arg"
+      else
+        echo "Error: unexpected argument '$arg'" >&2
+        usage
+      fi
+      ;;
   esac
 done
 
