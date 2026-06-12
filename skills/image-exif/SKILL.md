@@ -53,11 +53,11 @@ Affiche un tableau récapitulatif pour chaque fichier avec le statut de chaque c
 
 Si au moins un champ est non conforme :
 
-1. Propose de corriger automatiquement tous les écarts détectés
-2. Si le champ **Titre** est vide ou manquant, demande le libellé souhaité avant de procéder
-3. Une fois toutes les informations réunies, applique les corrections en une seule commande `exiftool` :
+1. Propose de corriger automatiquement les écarts détectés
+2. Si le champ **Titre** est parmi les champs non conformes, demande le libellé souhaité avant de procéder
+3. Une fois toutes les informations réunies, construis une commande `exiftool` qui n'inclut **que les champs non conformes** :
    ```
-   exiftool -overwrite_original -Title="..." -Creator="Christophe Heubès" -Copyright="CC BY-NC-SA 4.0" -WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" <fichier>
+   exiftool -overwrite_original [-Title="..."] [-Creator="Christophe Heubès"] [-Copyright="CC BY-NC-SA 4.0"] [-WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"] <fichier>
    ```
 4. Relis les champs corrigés pour confirmer
 
