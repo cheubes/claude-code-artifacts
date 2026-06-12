@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+for cmd in zip rsync; do
+  command -v "$cmd" >/dev/null 2>&1 || { echo "Error: '$cmd' not found" >&2; exit 1; }
+done
+
 DEPLOY_DIR="${HOME}/.claude/skills"
 
 usage() {
