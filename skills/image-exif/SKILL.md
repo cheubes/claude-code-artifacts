@@ -45,7 +45,7 @@ Si au moins un champ est non conforme :
 2. Si le champ **Titre** est vide ou manquant, demande le libellé souhaité avant de procéder
 3. Une fois toutes les informations réunies, applique les corrections en une seule commande `exiftool` :
    ```
-   exiftool -Title="..." -Creator="Christophe Heubès" -Copyright="CC BY-NC-SA 4.0" -WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" <fichier>
+   exiftool -overwrite_original -Title="..." -Creator="Christophe Heubès" -Copyright="CC BY-NC-SA 4.0" -WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" <fichier>
    ```
 4. Relis les champs corrigés pour confirmer
 
@@ -77,7 +77,7 @@ Ne pas procéder à la modification tant que le Titre n'est pas confirmé ou fou
 Applique en une seule commande `exiftool` le Titre fourni **et** les champs obligatoires suivants (sauf instruction contraire explicite de l'utilisateur) :
 
 ```
-exiftool \
+exiftool -overwrite_original \
   -Title="<titre fourni>" \
   -Creator="Christophe Heubès" \
   -Copyright="CC BY-NC-SA 4.0" \
