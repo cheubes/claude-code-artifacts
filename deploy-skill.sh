@@ -56,6 +56,7 @@ fi
 SKILL_NAME=$(basename "$SKILL_DIR")
 SKILL_ABS="$(pwd)/${SKILL_DIR}"
 
+# Produce a distributable archive (separate from the local deploy below)
 mkdir -p bin
 OUTPUT="$(pwd)/bin/${SKILL_NAME}.zip"
 rm -f "$OUTPUT"
