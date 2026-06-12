@@ -86,7 +86,5 @@ fi
 
 if [[ "$DEPLOY_DIR_EXISTED" == false ]]; then
   echo ""
-  echo "Note: ~/.claude/skills/ was just created. Restart Claude Code for the skill to be detected."
-else
-  echo "Done — skill '${SKILL_NAME}' ready in Claude Code (no restart needed)"
 fi
+echo "Done — restart Claude Code if skill '${SKILL_NAME}' is not detected."
