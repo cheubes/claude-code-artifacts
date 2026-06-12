@@ -28,3 +28,13 @@ Checks and edits EXIF metadata fields (Title, Creator, Copyright, WebStatement) 
 /image-exif check <file(s)>
 /image-exif edit <file>
 ```
+
+### image-optimize
+
+Optimizes images for the web using ImageMagick: resizes (default max 1920px) and compresses (default quality 85%) in place. Supports WebP conversion.
+
+```
+/image-optimize <file(s)>
+/image-optimize --width 1200 --quality 80 photo.jpg
+/image-optimize --webp *.jpg
+```
