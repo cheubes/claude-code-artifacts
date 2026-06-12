@@ -12,6 +12,18 @@ Tu gères les métadonnées EXIF d'images à partir de : `$ARGUMENTS`
 
 ---
 
+## Prérequis
+
+Avant toute action, vérifie qu'exiftool est disponible :
+
+```
+exiftool -ver
+```
+
+Si la commande échoue, arrête-toi et informe l'utilisateur : "exiftool n'est pas installé. Installe-le via `brew install exiftool` (macOS) ou `sudo apt install libimage-exiftool-perl` (Debian/Ubuntu)."
+
+---
+
 ## Cas 1 — Vérification (`check`)
 
 Si la demande commence par `check` ou ressemble à une demande de lecture/consultation :
