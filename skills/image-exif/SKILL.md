@@ -51,15 +51,16 @@ Affiche un tableau récapitulatif pour chaque fichier avec le statut de chaque c
 
 ### 1c — Correction des écarts
 
-Si au moins un champ est non conforme :
+Si au moins un fichier présente des champs non conformes :
 
 1. Propose de corriger automatiquement les écarts détectés
-2. Si le champ **Titre** est parmi les champs non conformes, demande le libellé souhaité avant de procéder
-3. Une fois toutes les informations réunies, construis une commande `exiftool` qui n'inclut **que les champs non conformes** :
-   ```
-   exiftool -overwrite_original [-Title="..."] [-Creator="Christophe Heubès"] [-Copyright="CC BY-NC-SA 4.0"] [-WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"] <fichier>
-   ```
-4. Relis les champs corrigés pour confirmer
+2. Si l'utilisateur accepte, traite **chaque fichier non conforme séparément** :
+   a. Si le champ **Titre** est parmi ses champs non conformes, demande le libellé souhaité pour ce fichier
+   b. Construis une commande `exiftool` qui n'inclut **que les champs non conformes** de ce fichier :
+      ```
+      exiftool -overwrite_original [-Title="..."] [-Creator="Christophe Heubès"] [-Copyright="CC BY-NC-SA 4.0"] [-WebStatement="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"] <fichier>
+      ```
+3. Une fois tous les fichiers traités, affiche un tableau récapitulatif final avec le statut de chaque fichier
 
 **Exemple d'invocation :**
 ```
